@@ -34,12 +34,20 @@ def getStart():
     btnStart["state"] = "disabled"
 
 
-startX = ttk.Entry(frame_buttons)
-startX.pack(side=TOP, padx=5, pady=5)
-startY = ttk.Entry(frame_buttons)
-startY.pack(side=TOP, padx=5, pady=5)
-btnStart = ttk.Button(frame_buttons, text="Add Start", command=getStart)
-btnStart.pack(side=TOP, padx=5, pady=5)
+frame_start = Frame(frame_buttons, relief=RAISED,
+                    borderwidth=1, background="#FFF")
+frame_start.pack(side=TOP, fill=BOTH, ipadx=5, ipady=5, padx=5, pady=5)
+
+labelStartX = ttk.Label(frame_start, text="X:", font=("Arial", 10), width=3)
+labelStartX.pack(side=LEFT, padx=5, pady=5)
+startX = ttk.Entry(frame_start, width=10)
+startX.pack(side=LEFT, padx=5, pady=5)
+labelStartY = ttk.Label(frame_start, text="Y:", font=("Arial", 10), width=3)
+labelStartY.pack(side=LEFT, padx=5, pady=5)
+startY = ttk.Entry(frame_start, width=10)
+startY.pack(side=LEFT, padx=5, pady=5)
+btnStart = ttk.Button(frame_start, text="Add Start", command=getStart)
+btnStart.pack(side=LEFT, padx=5, pady=5)
 
 end = []
 
@@ -54,12 +62,19 @@ def getEnd():
     btnEnd["state"] = "disabled"
 
 
-endX = ttk.Entry(frame_buttons)
-endX.pack(side=TOP, padx=5, pady=5)
-endY = ttk.Entry(frame_buttons)
-endY.pack(side=TOP, padx=5, pady=5)
-btnEnd = ttk.Button(frame_buttons, text="Add End", command=getEnd)
-btnEnd.pack(side=TOP, padx=5, pady=5)
+frame_end = Frame(frame_buttons, relief=RAISED,
+                  borderwidth=1, background="#FFF")
+frame_end.pack(side=TOP, fill=BOTH, ipadx=5, ipady=5, padx=5, pady=5)
+labelEndX = ttk.Label(frame_end, text="X:", font=("Arial", 10), width=3)
+labelEndX.pack(side=LEFT, padx=5, pady=5)
+endX = ttk.Entry(frame_end, width=10)
+endX.pack(side=LEFT, padx=5, pady=5)
+labelEndY = ttk.Label(frame_end, text="Y:", font=("Arial", 10), width=3)
+labelEndY.pack(side=LEFT, padx=5, pady=5)
+endY = ttk.Entry(frame_end, width=10)
+endY.pack(side=LEFT, padx=5, pady=5)
+btnEnd = ttk.Button(frame_end, text="Add End", command=getEnd)
+btnEnd.pack(side=LEFT, padx=5, pady=5)
 
 
 inters = []
@@ -75,13 +90,20 @@ def getInter():
                        height-y2-300, fill="#ffff00")
 
 
-interX = ttk.Entry(frame_buttons)
-interX.pack(side=TOP, padx=5, pady=5)
-interY = ttk.Entry(frame_buttons)
-interY.pack(side=TOP, padx=5, pady=5)
+frame_inter = Frame(frame_buttons, relief=RAISED,
+                    borderwidth=1, background="#FFF")
+frame_inter.pack(side=TOP, fill=BOTH, ipadx=5, ipady=5, padx=5, pady=5)
+labelInterX = ttk.Label(frame_inter, text="X:", font=("Arial", 10), width=3)
+labelInterX.pack(side=LEFT, padx=5, pady=5)
+interX = ttk.Entry(frame_inter, width=10)
+interX.pack(side=LEFT, padx=5, pady=5)
+labelInterY = ttk.Label(frame_inter, text="Y:", font=("Arial", 10), width=3)
+labelInterY.pack(side=LEFT, padx=5, pady=5)
+interY = ttk.Entry(frame_inter, width=10)
+interY.pack(side=LEFT, padx=5, pady=5)
 btnInter = ttk.Button(
-    frame_buttons, text="Add intermediate coord", command=getInter)
-btnInter.pack(side=TOP, padx=5, pady=5)
+    frame_inter, text="Add intermediate coord", command=getInter)
+btnInter.pack(side=LEFT, padx=5, pady=5)
 
 
 triangles = []
@@ -99,19 +121,42 @@ def getTriangle():
                           x3+300, 300-y3, fill="#80CBC4", outline="#004D40")
 
 
-triangle1X = ttk.Entry(frame_buttons)
+frame_triangles = Frame(frame_buttons, relief=RAISED,
+                        borderwidth=1, background="#FFF")
+frame_triangles.pack(side=TOP, fill=BOTH, ipadx=5, ipady=5, padx=5, pady=5)
+
+
+labelTriangle1X = ttk.Label(
+    frame_triangles, text="X1:", font=("Arial", 10), width=3)
+labelTriangle1X.pack(side=TOP, padx=5, pady=5)
+triangle1X = ttk.Entry(frame_triangles, width=10)
 triangle1X.pack(side=TOP, padx=5, pady=5)
-triangle1Y = ttk.Entry(frame_buttons)
+labelTriangle1Y = ttk.Label(frame_triangles, text="Y1:",
+                            font=("Arial", 10), width=3)
+labelTriangle1Y.pack(side=TOP, padx=5, pady=5)
+triangle1Y = ttk.Entry(frame_triangles, width=10)
 triangle1Y.pack(side=TOP, padx=5, pady=5)
 
-triangle2X = ttk.Entry(frame_buttons)
+labelTriangle2X = ttk.Label(
+    frame_triangles, text="X2:", font=("Arial", 10), width=3)
+labelTriangle2X.pack(side=TOP, padx=5, pady=5)
+triangle2X = ttk.Entry(frame_triangles, width=10)
 triangle2X.pack(side=TOP, padx=5, pady=5)
-triangle2Y = ttk.Entry(frame_buttons)
+labelTriangle2Y = ttk.Label(frame_triangles, text="Y2:",
+                            font=("Arial", 10), width=3)
+labelTriangle2Y.pack(side=TOP, padx=5, pady=5)
+triangle2Y = ttk.Entry(frame_triangles, width=10)
 triangle2Y.pack(side=TOP, padx=5, pady=5)
 
-triangle3X = ttk.Entry(frame_buttons)
+labelTriangle3X = ttk.Label(
+    frame_triangles, text="X3:", font=("Arial", 10), width=3)
+labelTriangle3X.pack(side=TOP, padx=5, pady=5)
+triangle3X = ttk.Entry(frame_triangles, width=10)
 triangle3X.pack(side=TOP, padx=5, pady=5)
-triangle3Y = ttk.Entry(frame_buttons)
+labelTriangle3Y = ttk.Label(frame_triangles, text="Y3:",
+                            font=("Arial", 10), width=3)
+labelTriangle3Y.pack(side=TOP, padx=5, pady=5)
+triangle3Y = ttk.Entry(frame_triangles, width=10)
 triangle3Y.pack(side=TOP, padx=5, pady=5)
 
 
@@ -133,7 +178,7 @@ def build():
 
 
 btnTriangle = ttk.Button(
-    frame_buttons, text="Add Triangle", command=getTriangle)
+    frame_triangles, text="Add Triangle", command=getTriangle)
 btnTriangle.pack(side=TOP, padx=5, pady=5)
 
 btnBuild = ttk.Button(frame_buttons, text="Build path", command=build)
